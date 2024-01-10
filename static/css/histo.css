@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins';
+    background-color: #7BACE4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#arrow {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+#arrow:hover {
+    transform: translate(-3px);
+}
+
+#cash {
+    width: 20px;
+    height: 20px;
+}
+
+.container {
+    max-height: 400px;
+    overflow: auto;
+    width: 400px;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    background-color: #E1EFFF;
+    margin: 0;
+    padding: 20px 0;
+    font-size: 24px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.icone-transaction {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+}
+
+
+.type-transaction {
+    font-size: 16px;
+    color: #333;
+}
+
+.montant-transaction {
+    font-weight: bold;
+    color: #333;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Style du scroll */
+
+/* .container::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #888; 
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 6px; 
+} */

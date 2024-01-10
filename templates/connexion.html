@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/avatar/logo.png')}}">
+</head>
+
+<body>
+    <div class="titres">
+        <p class="t1">CoinKids</p>
+        <p class="t2">Parce que chaque sou compte dans leur avenir.</p>
+    </div>
+
+    <div class="formulaire-container">
+        <div class="formulaire">
+            <form action="/connexion" method="POST">
+                <div class="input-with-icon">
+                    <label for="nom"></label>
+                    <span class="input-icon"> <i class="gg-user"></i> </span>
+                    <input type="text" id="nom" name="nom" placeholder="Nom d'utilisateur" size="35" required>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="input-with-icon">
+                    <label for="mdp"></label>
+                    <span class="input-icon"> <i class="gg-key"></i></span>
+                    <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" size="35" required>
+                </div>
+                <p id="rst"><span>Mot de passe oublié ? Cliquer <a href="#">ici</a> pour réinitialiser</span></p>
+                <br>
+                <br>
+                <div id="connect">
+                    <button class="btn" id="conn">Je me connecte</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="bouton-container">
+            <a href="{{ url_for('inscription') }}"><button class="btn" id="register">Je m'enregistre</button></a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/key.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/user.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    /**box-shadow: 0 0 0 3px red inset;**/
+}
+
+body{
+    background-image: url(../img/background.png);
+}
+
+.t1 {
+    font-size: 3.5em;
+    color: #000;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.92px;
+}
+
+.t2 {
+    font-size: 2.5em;
+    color: #000;
+
+    font-family: Poppins;
+   
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.titres {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.formulaire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+::placeholder {
+    color:rgba(0, 0, 0, 0.50);
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.96px;
+}
+
+
+#rst {
+    padding-top:5px;
+    font-size: 0.7em;
+
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left:10px;
+    top:50%;
+    transform: translateY(-50%);
+    color:#3a3939;
+    pointer-events: none;
+
+}
+.gg-user {
+    color:#1E3050;
+}
+
+.gg-key {
+    position: relative;
+    left:8px;
+    color: #1E305080;
+}
+
+#nom {
+    padding-left: 30px;
+}
+
+#mdp {
+    padding-left:30px;
+}
+
+input[type="text"], input[type="password"] {
+    padding:10px;
+    border: 1px solid red;
+    background-color: #D9D9D9;
+    height:20px;
+} 
+
+#connect {
+    text-align: center;
+}
+
+.btn {
+    box-shadow: 2px 2px 5px #888888;
+    width:216px;
+    height:52px;
+    font-size: 1.2em;
+    padding:10px;
+    border-radius:15px;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+#conn {
+    background-color: #0FE899;
+    color: #FFF;
+
+    font-family: Poppins;
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#conn2 {
+    background-color: #F1961C;
+    color: #FFF;
+
+    font-family: Poppins;
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#register {
+    background-color: #FFF;
+    color:#676464;
+  
+
+    font-family: Poppins;
+   
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#image-haut-droite {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 220px;
+    height: auto;
+    z-index: 9999;
+}
+

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Asar&family=Caprasimo&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+}
+
+#arrow {
+    position: fixed;
+    top:10px;
+    left:10px;
+}
+
+#arrow:hover {
+    transform: translate(-3px);
+}
+
+.logo {
+    vertical-align: middle;
+    width: 60px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.h1_user {
+    margin-left: 36px;
+    color: #1b7b33;
+}
+
+.container_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_user input {
+    margin-bottom: 10px;
+    border: 1px solid #135624;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container_user input:hover {
+    border: 1px solid #135624;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: border 0.1s, box-shadow 0.1s;
+}
+
+.button_user {
+    background-color: #1b7b33;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.button_user:hover {
+    background-color: #135624;
+}
+
+.content {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.personne {
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+}
+
+.nom_label {
+    width: 48%;
+    margin-right: 5px;
+    margin-left: -10px;
+}
+
+.montant_label {
+    width: 48%;
+    margin-left: 5px;
+    margin-right: -10px;
+}
+
+.form_user {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.label-input {
+    width: 93%;
+}
+
+.label-input:focus {
+    outline: none;
+    border-color: #1b7b33;
+}
+
+.radio-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.toutdroit {
+    display: flex;
+    align-items: center;
+}
+
+.toutdroit input[type="radio"] {
+    margin:0px;
+}
+
+.radio-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+}
+
+.radio-options {
+    display: flex;
+}
+
+#fille, #hebdomadaire {
+    margin-left: 15px;
+    background-color: #0c0077;
+}
+
+.ornn{
+    width: 112.53px;
+}
+.ornn1{
+    width: 77.54px;
+}
+
+label.selection{
+     padding-left: 5px;
+}

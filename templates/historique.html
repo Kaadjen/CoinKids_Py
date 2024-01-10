@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique de transaction</title>
+    <link rel="stylesheet" href="../static/css/histo.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/histo.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/avatar/logo.png') }}">
+</head>
+<body>
+
+<div class="bg">
+  
+</div>
+
+<div id="arrow">
+    <!--Bouton retour en arrière-->
+    <a href="{{ url_for('dashboard') }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="61" height="70" viewBox="0 0 61 70" fill="none">
+            <g clip-path="url(#clip0_18_229)">
+                <path d="M1.27992 31.9102C-0.422084 33.6191 -0.422084 36.3945 1.27992 38.1035L23.0656 59.9785C24.7677 61.6875 27.5317 61.6875 29.2337 59.9785C30.9357 58.2695 30.9357 55.4941 29.2337 53.7852L14.8688 39.375H56.6429C59.0529 39.375 61 37.4199 61 35C61 32.5801 59.0529 30.625 56.6429 30.625H14.8824L29.2201 16.2148C30.9221 14.5059 30.9221 11.7305 29.2201 10.0215C27.5181 8.3125 24.754 8.3125 23.052 10.0215L1.26631 31.8965L1.27992 31.9102Z"
+                      fill="#1E3050"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_18_229">
+                    <rect width="61" height="70" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    </a>
+</div>
+
+<div class="history">
+    <div class="top-page">
+        <h1>Historique de transaction</h1>
+    </div>
+    <div class="container" id="myScrollableDiv">
+        <div class="transactions">
+
+            <div class="transactions">
+                {% for transaction in transactions %}
+                    {% if transaction.icon %}<div class="transaction">
+                        <div class="icone-transaction">
+                            <img src="{{ url_for('static', filename='img/' + transaction.icon + '.png') }}" id="cash">
+
+                        </div>
+                        <div class="details-transaction">
+                            <span class="type-transaction">{{ transaction.type }}</span>
+                            <span class="montant-transaction">{{ transaction.amount }}</span>
+                        </div>
+                    </div>{% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var scrollableDiv = document.getElementById('myScrollableDiv');
+
+
+    var hauteurMaximale = 600;
+
+
+    scrollableDiv.addEventListener('scroll', function () {
+
+        if (scrollableDiv.scrollHeight > hauteurMaximale) {
+            scrollableDiv.style.overflowY = 'scroll';
+            scrollableDiv.style.scrollBehavior = 'smooth';
+        } else {
+            scrollableDiv.style.overflowY = 'auto';
+            scrollableDiv.style.scrollBehavior = 'auto';
+        }
+    });
+</script>
+
+
+</body>
+</html>

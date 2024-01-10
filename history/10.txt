@@ -1,0 +1,3 @@
+{"icon": "AJOUT", "type": "AJOUT", "amount": "4€"}
+{"icon": "AJOUT", "type": "AJOUT", "amount": "60€"}
+{"icon": "AJOUT", "type": "AJOUT", "amount": "3232€"}

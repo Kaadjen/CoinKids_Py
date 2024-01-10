@@ -1,0 +1,221 @@
+/* Styles généraux */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+.image {
+    margin:10px;
+    position: fixed;
+    top:1px;
+    right:10px;
+    background-color: #FFF;
+    border-radius: 464px;
+    width:100px;
+    height: 100px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+#logo-garcon {
+    width: 100px;
+    height: 100px;
+    transition: transform .3s cubic-bezier(0, .67, 1, 1);
+}
+
+#logo-garcon:hover, .image:hover  {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+input[type="number"] {
+    padding:5px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+select {
+    padding:5px;
+    margin-bottom: 7px;
+    color:white;
+    border:transparent;
+    border-radius: 20px;
+    background: #0FE899;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+
+    background-color: #C3F0FE;
+}
+
+.ajout {
+    text-decoration: none;
+}
+
+/* Style pour le contenu principal */
+.container {
+    width: 80%;
+    height:80%;
+    border: 5px groove #809ea8;
+    /* border-radius: 20px 8px; */
+    padding: 20px;
+    background-color: #e5f6fc;
+    text-align: center;
+}
+
+/* Style pour les onglets */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #809ea8;
+    padding: 10px;
+}
+
+.tabs-container button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style pour le contenu des onglets */
+.tab-content {
+    display: none;
+    border: 1px solid #809ea8;
+    padding: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Style pour les boutons */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+/* Style pour les boutons "Historique" et "Éditer" */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.buttons button {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Style pour le solde */
+.balance {
+    margin-bottom: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn1 {
+    padding:2px;
+    color:white;
+    border-radius: 20px;
+    background: #4682B4;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-color: transparent;
+}
+
+.btn2 {
+    padding:2px;
+    color:white;
+    border-color: transparent;
+    border-radius: 20px;
+    background: #FF6347;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#arrow {
+    position: fixed;
+    margin:10px;
+    top:1px;
+    transition: transform .3s cubic-bezier(0, .67, 1, 1);
+}
+
+#arrow:hover {
+    transform: translate(-3px);
+}
+
+.logout {
+    color:black;
+}
+
+.btn-opt:hover {
+    cursor: pointer;
+    background-color:#9b9a9a ;
+}
+
+.btn-valider {
+    color:white;
+    padding: 5px;
+    border-radius: 20px;
+    background: #808080;
+    border-color: transparent;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: transform 0.1s ease;
+}
+
+.btn-opt {
+    width:120px;
+    color:white;
+    padding: 5px;
+    border-radius: 20px;
+    background: #808080;
+    border-color: transparent;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: transform 0.1s ease;
+}
+.carre-blanc {
+    width: 318px;
+    height:140px;
+    background-color: #FFF;
+    border-radius: 8px;
+    border:4px dashed #949393;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.solde {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.solde-style {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #dddddd;
+    border-radius: 8px;
+    width:150px;
+  
+}
+
+h1 {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}

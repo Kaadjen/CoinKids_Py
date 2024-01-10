@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/avatar/logo.png')}}">
+    <title>Profil de {{ session['enfant'] }}</title>
+</head>
+
+<body>
+    <div id="arrow">
+        <!--Logout bouton-->
+        <a href="/logout">
+            <svg class="logout" width="80"  height="80"  viewBox="0 0 24 24"  fill="none"  xmlns="http://www.w3.org/2000/svg">  <path    d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z"    fill="currentColor"  />  <path    d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z"    fill="currentColor"  /></svg> 
+        </a>
+    </div>
+<h1>Profil de {{ session['enfant'] }}</h1>
+
+    <div class="box">
+        <div class="image">
+            <a href="{{ url_for('profils') }}">
+            <img src="{{ url_for('static', filename='img/avatar/' + enfant[11])}}" id="logo-garcon">
+            </a>
+        </div>
+        <div class="solde">
+            <div class="balance">
+                <div class="carre-blanc" id="soldeActuel">
+                    <span class="c"> Solde : </span>
+                     <span class="solde-style">
+                         {{ solde }}€      
+                    </span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="tabs-container">
+                    <button onclick="toggleTab('ajout')" class="btn1">Ajout</button>
+                    <button onclick="toggleTab('retrait')" class="btn2">Retrait</button>
+                </div>
+                <div class="tabs-content">
+                    <div id="ajout" class="tab-content active">
+                        <input type="number" id="montant_a_ajouter" min="0" placeholder="Montant à ajouter">
+                        <button class="btn-opt" id="valider_ajout">Valider</button>
+                    </div>
+                    <div id="retrait" class="tab-content">
+                        <select id="modeRetrait" onchange="showRetraitOptions()">
+                            <option value="CASH">CASH</option>
+                            {% if compte_paypal %}<option value="PAYPAL">PAYPAL</option>{% endif %}
+                            {% if compte_bancaire %}<option value="BANQUE">BANQUE</option>{% endif %}
+                        </select>
+                        <div id="retrait-options" style="display: none;">
+                            <input type="number" id="montant_a_prelever" min="0" placeholder="Montant à prélever">
+                            <button class="btn-opt" id="valider_retrait">Valider</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a class="ajout" href="{{ url_for('historique') }}"><button class="btn-opt">Historique</button></a>
+                    <a class="ajout" href="{{ url_for('editer') }}"><button class="btn-opt">Éditer</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function toggleTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        document.getElementById(tabId).classList.add('active');
+
+        if (tabId === 'retrait') {
+            showRetraitOptions();
+        }
+    }
+
+    function showRetraitOptions() {
+        const select = document.getElementById('modeRetrait');
+        const optionsDiv = document.getElementById('retrait-options');
+
+        if (select.value === 'CASH' || select.value === 'PAYPAL' || select.value === 'BANQUE') {
+            optionsDiv.style.display = 'block';
+        } else {
+            optionsDiv.style.display = 'none';
+        }
+    }
+        // Écouteur d'événement pour le champ 'montant_a_ajouter'
+    document.getElementById('montant_a_ajouter').addEventListener('change', function() {
+        if (this.value < 0) {
+            this.value = 0;
+        }
+    });
+
+    // Écouteur d'événement pour le champ 'montant_a_prelever'
+    document.getElementById('montant_a_prelever').addEventListener('change', function() {
+        if (this.value < 0) {
+            this.value = 0;
+        }
+    });
+    function fetchNewSolde(enfant) {
+        fetch(`/dashboard/${enfant}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('soldeActuel').innerText = data.solde + "€";
+            }
+        });
+    }
+
+    document.getElementById('valider_ajout').addEventListener('click', function() {
+        const montant = parseInt(document.getElementById('montant_a_ajouter').value);
+        const enfant = "{{ session['enfant'] }}";
+
+        if (!isNaN(montant) && montant > 0) {
+            fetch(`/ajouter_argent/${enfant}/${montant}`)
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    fetchNewSolde(enfant);
+                }
+            });
+        } else {
+            alert('Veuillez entrer un montant valide.');
+        }
+    });
+
+    document.getElementById('valider_retrait').addEventListener('click', function() {
+         const select = document.getElementById('modeRetrait').value;
+        const montant = parseInt(document.getElementById('montant_a_prelever').value);
+        const enfant = "{{ session['enfant'] }}";
+
+        if (!isNaN(montant) && montant > 0) {
+            fetch(`/retirer_argent/${enfant}/${montant}/${select}`)
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    fetchNewSolde(enfant);
+                }
+            });
+        } else {
+            alert('Veuillez entrer un montant valide.');
+        }
+    });
+
+</script>
+
+</body>
+</html>

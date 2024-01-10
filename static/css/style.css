@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
+#famille {
+    background-image:url(../img/bg-profils.svg);
+    background-size:cover;
+    background-repeat:no-repeat;
+
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#welcome {
+  display: flex;
+  justify-content:center;
+}
+
+.welcome {
+  font-size:60px;
+}
+
+.profil {
+    display: flex;
+    flex-flow: initial;
+    justify-content: center;
+    text-align: center;
+    gap: 130px
+}
+
+.profils {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.garcon,
+.fille,
+.ajout {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    gap: 10px;
+    transition: transform .3s cubic-bezier(0, .67, 1, 1);
+}
+
+.garcon:hover, .fille:hover, .ajout:hover {
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+
+.garcon img,
+.fille img,
+.ajout span {
+    background-color: white;
+    border-radius: 50%;
+    background-color: white;
+    border-radius: 50%;
+    filter: drop-shadow(10px 5px 5px rgba(66, 55, 55, 0.42)) drop-shadow(-7px -7px 6px #625A5A96);
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    font-size: 60px !important;
+}
+
+
+.cestciao {
+    text-align: right;
+}
+
+.cestciao span {
+    transition: transform .3s cubic-bezier(0, .67, 1, 1);
+}
+.solde-input {
+    background-color: #f3f4f6; /* couleur de fond gris clair */
+    color: #7a7a7a; /* couleur de texte gris */
+    border: none;
+    box-shadow: none;
+    cursor: not-allowed; /* curseur indiquant que l'élément n'est pas modifiable */
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    gap: 68px;
+}
+
+.cestciao span:hover {
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.door {
+    text-decoration: none;
+    color: black;
+}

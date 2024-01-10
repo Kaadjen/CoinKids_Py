@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/avatar/logo.png')}}">
+</head>
+
+<body style="margin-top: 10%">
+    <div class="titres">
+        <p class="t2">{{ message }}</p>
+    </div>
+
+    <div id="mid">
+        <a href="{{ redirect_link }}"><button class="btn t1" id="conn">OK</button></a>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

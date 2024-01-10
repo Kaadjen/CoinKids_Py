@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau profil</title>
+    <link rel="stylesheet" href="../Static/css/edit.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/avatar/logo.png')}}">
+</head>
+<body class="content">
+
+    <div id="arrow">
+        <!--Bouton retour en arrière-->
+        <a href="{{ url_for('dashboard') }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="61" height="70" viewBox="0 0 61 70" fill="none">  <g clip-path="url(#clip0_18_229)">  <path d="M1.27992 31.9102C-0.422084 33.6191 -0.422084 36.3945 1.27992 38.1035L23.0656 59.9785C24.7677 61.6875 27.5317 61.6875 29.2337 59.9785C30.9357 58.2695 30.9357 55.4941 29.2337 53.7852L14.8688 39.375H56.6429C59.0529 39.375 61 37.4199 61 35C61 32.5801 59.0529 30.625 56.6429 30.625H14.8824L29.2201 16.2148C30.9221 14.5059 30.9221 11.7305 29.2201 10.0215C27.5181 8.3125 24.754 8.3125 23.052 10.0215L1.26631 31.8965L1.27992 31.9102Z" fill="#1E3050"/></g><defs>  <clipPath id="clip0_18_229">    <rect width="61" height="70" fill="white"/>  </clipPath></defs></svg> 
+        </a>
+    </div>
+    
+  <form method='post' action="{{ url_for('modification') }}" class="form_user">
+        <h1 class="h1_user"><img src="{{ url_for('static', filename='img/avatar/editer_logo.png')}}" class="logo">Éditer profil</h1>
+        <div class="container_user">
+            <div class="personne">
+                <input type='text' placeholder="Prénom" name='prenom' value="{{ enfant[0][2] }}" class ="nom_label " required>
+                <input type='text' placeholder="Montant de départ" name='montant_d' value="Montant de départ : {{ enfant[0][4] }}€" class ="montant_label solde-input" readonly>
+            </div>
+            <div class="personne">
+                <input type='text' placeholder="Montant de poche" name='montant_p' value="{{ enfant[0][6] }}" class ="nom_label" required>
+                <input type='text' placeholder="Solde" name='solde' value="Solde : {{ enfant[0][5] }}€" class ="montant_label solde-input" readonly>
+            </div>
+            <input type='text' placeholder="RIB (optionnel)" name='rib' value="{{ enfant[0][9] }}" class ="label-input" >
+            <input type='text' placeholder="Paypal (optionnel)" name='paypal' value="{{ enfant[0][10] }}" class ="label-input" >
+
+
+<div class="radio-container">
+    <label class="radio-title">Genre :</label>
+    <div class="radio-options">
+        <div class="toutdroit">
+            <input type="radio" id="fille" name="genre" value="fille" required {% if enfant[0][3] == 'fille' %}checked{% endif %}>
+            <label for="fille" class="ornn selection">Fille</label>
+        </div>
+        <div class="toutdroit">
+            <input type="radio" id="garcon" name="genre" value="garcon" required {% if enfant[0][3] == 'garcon' %}checked{% endif %}>
+            <label for="garcon" class="ornn1 selection">Garçon</label>
+        </div>
+    </div>
+
+    <label class="radio-title">Fréquence :</label>
+    <div class="radio-options">
+        <div class="toutdroit">
+            <input type="radio" id="hebdomadaire" name="frequence" value="hebdomadaire" required {% if enfant[0][7] == 'hebdomadaire' %}checked{% endif %}>
+            <label for="hebdomadaire" class="selection">Hebdomadaire</label>
+        </div>
+        <div class="toutdroit">
+            <input type="radio" id="mensuelle" name="frequence" value="mensuelle" required {% if enfant[0][7] == 'mensuelle' %}checked{% endif %}>
+            <label for="mensuelle" class="selection">Mensuelle</label>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+            <button type='submit' class="button_user">Modifier les informations</button>
+        </div>
+    </form>
+
+
+
+</body>
+</html>
